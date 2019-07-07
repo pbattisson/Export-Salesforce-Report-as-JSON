@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Get Report as JSON" icon-name="standard:report">
+        <p class="slds-p-horizontal_small">
+            <template if:true={reports}>
+                <select onchange={selectReport}>
+                    <option value="">--Select Report--</option>
+                    <template for:each={reports} for:item="rep">
+                        <option key={rep.Id} value={rep.Id}>{rep.Name}</option>
+                    </template>
+                </select>
+            </template>
+            <template if:true={reportData}>
+                <lightning-textarea name="input4" readonly value={reportData} label="Report JSON" ></lightning-textarea>
+            </template>
+        </p>
+    </lightning-card>
+</template>
